@@ -91,5 +91,21 @@ namespace SumIntListTest
             Assert.Equal(expected[1], actual[1]);
             Assert.Equal(expected[2], actual[2]);
         }
+
+        [Fact]
+        public void ShouldReturnZeroElementWhenNoMatchedElements()
+        {
+            // Arrange
+            int[] elements = new int[] { 5 };
+            int target = 12;
+            int[] expected = new int[] { };
+
+            // Act
+            int[] actual = SumIntListMain.GetArray(elements, target);
+
+            // Assert
+            Assert.NotNull(actual);
+            Assert.Equal(expected.Length, actual.Length);
+        }
     }
 }
